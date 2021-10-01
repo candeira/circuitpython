@@ -34,3 +34,17 @@
 #define BOARD_USER_SAFE_MODE_ACTION translate("pressing boot button at start up.\n")
 
 #define AUTORESET_DELAY_MS 500
+
+// PRIVATE TO PROJECT
+
+#ifdef MICROPY_PY_UASYNCIO
+#undef MICROPY_PY_UASYNCIO
+#endif
+#define MICROPY_PY_UASYNCIO (1)
+
+// CHECK HOW IT GOES FOR DEVELOPMENT
+
+#ifdef MICROPY_USE_READLINE
+#undef MICROPY_USE_READLINE
+#endif
+#define MICROPY_USE_READLINE (1)
